@@ -1,23 +1,15 @@
-name: Tests
+name: test
 on: [push, pull_request]
 
 jobs:
-  build:
-    strategy:
-      matrix:
-        go-version:
-          - 1.15.x
-        os:
-          - ubuntu-latest
-          - macos-latest
-
-    runs-on: ${{ matrix.os }}
+  test:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Install Go
         uses: actions/setup-go@v2
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: 1.16
 
       - name: Checkout code
         uses: actions/checkout@v2
