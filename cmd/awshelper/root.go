@@ -26,5 +26,6 @@ func NewCmd() *cobra.Command {
 	command.AddCommand(newBlockTrafficCmd())
 	command.AddCommand(newInstanceRefreshCmd())
 	command.AddCommand(newUpdateAsgCmd())
+	command.AddCommand(getEc2Normally())
 	return command
 }
